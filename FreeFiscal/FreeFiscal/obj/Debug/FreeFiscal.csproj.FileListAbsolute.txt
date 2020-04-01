@@ -1,0 +1,9 @@
+C:\Users\Спок\source\repos\FreeFiscal\FreeFiscal\bin\Debug\FreeFiscal.exe.config
+C:\Users\Спок\source\repos\FreeFiscal\FreeFiscal\bin\Debug\FreeFiscal.exe
+C:\Users\Спок\source\repos\FreeFiscal\FreeFiscal\bin\Debug\FreeFiscal.pdb
+C:\Users\Спок\source\repos\FreeFiscal\FreeFiscal\obj\Debug\FreeFiscal.Form1.resources
+C:\Users\Спок\source\repos\FreeFiscal\FreeFiscal\obj\Debug\FreeFiscal.Properties.Resources.resources
+C:\Users\Спок\source\repos\FreeFiscal\FreeFiscal\obj\Debug\FreeFiscal.csproj.GenerateResource.cache
+C:\Users\Спок\source\repos\FreeFiscal\FreeFiscal\obj\Debug\FreeFiscal.exe
+C:\Users\Спок\source\repos\FreeFiscal\FreeFiscal\obj\Debug\FreeFiscal.pdb
+C:\Users\Спок\source\repos\FreeFiscal\FreeFiscal\obj\Debug\FreeFiscal.csprojAssemblyReference.cache
