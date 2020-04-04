@@ -35,8 +35,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.TextOut = new System.Windows.Forms.RichTextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.ComandToSend = new System.Windows.Forms.TextBox();
+            this.Send = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,40 +107,60 @@
             // 
             // TextOut
             // 
-            this.TextOut.Location = new System.Drawing.Point(296, 25);
+            this.TextOut.Location = new System.Drawing.Point(295, 25);
             this.TextOut.Name = "TextOut";
             this.TextOut.ReadOnly = true;
-            this.TextOut.Size = new System.Drawing.Size(492, 150);
+            this.TextOut.Size = new System.Drawing.Size(492, 459);
             this.TextOut.TabIndex = 5;
             this.TextOut.Text = "";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(296, 182);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(492, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Запрос";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(296, 211);
+            this.button5.Location = new System.Drawing.Point(12, 181);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(492, 23);
+            this.button5.Size = new System.Drawing.Size(277, 23);
             this.button5.TabIndex = 6;
-            this.button5.Text = "Запрос 2";
+            this.button5.Text = "Об ФН";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // ComandToSend
+            // 
+            this.ComandToSend.Location = new System.Drawing.Point(296, 494);
+            this.ComandToSend.Name = "ComandToSend";
+            this.ComandToSend.Size = new System.Drawing.Size(407, 20);
+            this.ComandToSend.TabIndex = 7;
+            // 
+            // Send
+            // 
+            this.Send.Location = new System.Drawing.Point(709, 491);
+            this.Send.Name = "Send";
+            this.Send.Size = new System.Drawing.Size(78, 23);
+            this.Send.TabIndex = 8;
+            this.Send.Text = "отправить";
+            this.Send.UseVisualStyleBackColor = true;
+            this.Send.Click += new System.EventHandler(this.Send_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 207);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(258, 52);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Ввести команду можно вручную. Напишите саму \r\nкоманду и аргументы в виде байтов о" +
+    "тделеных \r\nпробелами в шестнадцатиричном формате.\r\nНапример 31 - получить номер " +
+    "ФН";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 526);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Send);
+            this.Controls.Add(this.ComandToSend);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.TextOut);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -147,6 +169,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -159,8 +182,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox TextOut;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox ComandToSend;
+        private System.Windows.Forms.Button Send;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -102,9 +102,11 @@ namespace FreeFiscal
             }
 
         }
-        string incorrectMessege()
+        string incorrectMessege(bool inc = true)
         {
-            string txt = "Неверный формат ответа. Полный код ответа:\n";
+            string txt = "";
+            if (inc) txt += "Неверный формат ответа. Полный код ответа:\n";
+            else txt += "Данный код ответа еще не добавлен в функционал FreeFiscal. Полный код ответа:\n";
             txt += "\n[" + DateTime.Now.ToLongTimeString() + "]:";
             for (int i = 0; i < buffer.Length; i++) txt += "0x" + buffer[i].ToString("X2") + " ";
             txt += "\n";
@@ -189,6 +191,7 @@ namespace FreeFiscal
                             txt += "\n[" + DateTime.Now.ToLongTimeString() + "]: Фискальный Признак" + (((ulong)buffer[63] << 24) | ((ulong)buffer[64] << 16) | ((ulong)buffer[65] << 8) | ((ulong)buffer[66])).ToString() + "\n";
                         }
                         break;
+                    default: txt = incorrectMessege(); break;
                 }
                 txt += "[" + DateTime.Now.ToLongTimeString() + "]: " + "CRC16: 0x" + buffer[buffer.Length - 2].ToString("X2") + buffer[buffer.Length - 1].ToString("X2") + "\n";
 
@@ -218,18 +221,28 @@ namespace FreeFiscal
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (Autorized)
-                sendComand(0x31);
-        }
-        //0x36363730
-        readonly byte[] arguments = { 0x00, 0x00, 0x00, 0x01 };
         private void button5_Click(object sender, EventArgs e)
         {
             if (Autorized)
+                sendComand(0x30);
+        }
+
+        private void Send_Click(object sender, EventArgs e)
+        {
+            if (Autorized)
             {
-                sendComand(0x40,arguments);
+                string cmd = ComandToSend.Text;
+                this.BeginInvoke((Action)(() =>
+                {
+                    ComandToSend.Text = "";
+                }));
+                string[] cmds = cmd.Split(' ');
+                if (cmds.Length < 1) return;
+                byte comand = Convert.ToByte(cmds[0], 16);
+                byte[] cmdsb = new byte[cmds.Length - 1];
+                for (int i = 1; i < cmds.Length; i++)
+                    cmdsb[i] = Convert.ToByte(cmds[i], 16);
+                sendComand(comand,cmdsb);
             }
         }
 
